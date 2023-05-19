@@ -1,0 +1,8 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1.0
+      author: CEO
+      changes:
+        - sqlFile:
+            path: 1.0/1.0-create-account-table.sql
+            relativeToChangelogFile: true
