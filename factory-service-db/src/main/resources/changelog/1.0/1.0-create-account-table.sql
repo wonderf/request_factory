@@ -12,8 +12,8 @@ CREATE TABLE IF NOT EXISTS account(
 CREATE TABLE IF NOT EXISTS proxy_settings(
     id bigserial NOT NULL PRIMARY KEY,
     short_name varchar(255) NOT NULL,
-    login varchar(255) NOT NULL,
-    pass varchar(255) NOT NULL,
+    login varchar(255) NULL,
+    pass varchar(255) NULL,
     ip varchar(255) NOT NULL,
     port integer NOT NULL
 
