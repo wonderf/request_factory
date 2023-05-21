@@ -2,7 +2,7 @@ CREATE TABLE IF NOT EXISTS account(
     id bigserial NOT NULL PRIMARY KEY,
     username varchar(255) NOT NULL,
     pass    varchar(255) NOT NULL,
-    proxy_id bigserial,
+    proxy_id bigserial UNIQUE,
     status_id bigserial NOT NULL
 );
 CREATE TABLE IF NOT EXISTS proxy_settings(
