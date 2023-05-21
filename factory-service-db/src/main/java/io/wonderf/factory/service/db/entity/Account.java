@@ -6,35 +6,23 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.util.Set;
-
 @Entity
-@Table(name = "proxy_settings")
+@Table(name = "account")
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class ProxySettings {
-
+public class Account {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(name = "short_name")
-    private String shortName;
-
-    @Column(name = "login")
-    private String login;
-
+    @Column(name = "username")
+    private String username;
     @Column(name = "pass")
     private String pass;
 
-    @Column(name = "ip")
-    private String ip;
-
-    @Column(name = "port")
-    private Integer port;
-
-    @OneToMany(mappedBy = "setting")
-    private Set<Account> accounts;
+    @ManyToOne
+    @JoinColumn(name = "proxy_id")
+    private ProxySettings setting;
 }
