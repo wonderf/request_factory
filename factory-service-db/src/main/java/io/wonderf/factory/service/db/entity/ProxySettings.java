@@ -35,6 +35,6 @@ public class ProxySettings {
     @Column(name = "port")
     private Integer port;
 
-    @OneToMany(mappedBy = "setting")
-    private Set<Account> accounts;
+    @OneToOne(mappedBy = "setting")
+    private Account accounts;
 }

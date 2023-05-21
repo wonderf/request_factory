@@ -22,7 +22,7 @@ public class Account {
     @Column(name = "pass")
     private String pass;
 
-    @ManyToOne
+    @OneToOne(cascade = {CascadeType.REMOVE},fetch = FetchType.LAZY)
     @JoinColumn(name = "proxy_id")
     private ProxySettings setting;
 }
