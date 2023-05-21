@@ -2,10 +2,6 @@ CREATE TABLE IF NOT EXISTS account(
     id bigserial NOT NULL PRIMARY KEY,
     username varchar(255) NOT NULL,
     pass    varchar(255) NOT NULL,
-    shared_secret varchar(255) NOT NULL,
-    identity_secret varchar(255) NOT NULL,
-    steam_id varchar(255) NOT NULL,
-    market_key varchar(255) NOT NULL,
     proxy_id bigserial,
     status_id bigserial NOT NULL
 );
