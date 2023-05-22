@@ -4,8 +4,8 @@ import lombok.*;
 
 @Getter
 @Setter
-@NoArgsConstructor
-@AllArgsConstructor
+//@NoArgsConstructor
+//@AllArgsConstructor
 @Builder
 public class ProxyDto {
 }

@@ -14,6 +14,7 @@ import java.util.stream.Collectors;
 @RequestMapping("/api/account")
 @RequiredArgsConstructor
 public class AccountController {
+
     private final AccountService accountService;
     @GetMapping
     public ResponseEntity<List<AccountResponse>> accounts(){
@@ -22,12 +23,14 @@ public class AccountController {
 
     @GetMapping("/{id}")
     public ResponseEntity<AccountResponse> accountById(@PathVariable Integer id){
-        return ResponseEntity.ok(AccountResponse.of(accountService.findById(id)));
+        //return ResponseEntity.ok(AccountResponse.of(accountService.findById(id)));
+        return null;
     }
 
     @PostMapping
     public ResponseEntity createAccount(@RequestBody AccountCreateRequest request){
-        return ResponseEntity.created();
+       // return ResponseEntity.created();
+        return null;
     }
 
     @PatchMapping
@@ -37,6 +40,7 @@ public class AccountController {
 
     @DeleteMapping("/{id}")
     public ResponseEntity deleteAccount(@PathVariable Integer id){
-        return accountService.delete();
+        //return accountService.delete();
+        return null;
     }
 }
