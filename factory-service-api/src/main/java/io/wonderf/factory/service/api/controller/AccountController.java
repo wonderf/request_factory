@@ -22,13 +22,16 @@ public class AccountController {
 
     @GetMapping("/{id}")
     public ResponseEntity<AccountResponse> accountById(@PathVariable Integer id){
-        return ResponseEntity.ok(AccountResponse.of(accountService.findById(id)));
+//        return ResponseEntity.ok(AccountResponse.of(accountService.findById(id)));
+        return null;
     }
 
     @PostMapping
     public ResponseEntity createAccount(@RequestBody AccountCreateRequest request){
-        return ResponseEntity.created();
+//        return ResponseEntity.created();
+        return null;
     }
+
 
     @PatchMapping
     public ResponseEntity<AccountResponse> updateAccount(@RequestBody AccountCreateRequest request){
