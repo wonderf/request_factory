@@ -4,6 +4,9 @@ import io.wonderf.factory.service.api.model.request.AccountCreateRequest;
 import io.wonderf.factory.service.api.model.response.AccountResponse;
 import io.wonderf.factory.service.db.service.AccountService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,9 +16,12 @@ import java.util.stream.Collectors;
 @RestController
 @RequestMapping("/api/account")
 @RequiredArgsConstructor
+@ComponentScan({"io.wonderf.factory.service.db.service"})
+@EnableJpaRepositories("io.wonderf.factory.service.db.repository")
 public class AccountController {
 
     private final AccountService accountService;
+
     @GetMapping
     public ResponseEntity<List<AccountResponse>> accounts(){
         return ResponseEntity.ok(accountService.findAll().stream().map(dto->new AccountResponse()).collect(Collectors.toList()));

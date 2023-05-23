@@ -15,7 +15,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class AccountServiceImp implements AccountService {
 
-    AccountRepository accountRepository;
+    private final AccountRepository accountRepository;
 
     @Override
     public Account create(AccountDto accountDto) {

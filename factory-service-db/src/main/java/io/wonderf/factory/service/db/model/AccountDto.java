@@ -6,8 +6,8 @@ import lombok.*;
 
 @Getter
 @Setter
-@NoArgsConstructor
-@AllArgsConstructor
+//@NoArgsConstructor
+//@AllArgsConstructor
 @Builder
 public class AccountDto extends Account {
     private Integer id;
